@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Plex-Official</Name>
-  <Repository>plexinc/pms-docker</Repository>
+  <Repository>plexinc/pms-docker:latest</Repository>
   <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
   <Network>host</Network>
   <Privileged>false</Privileged>
