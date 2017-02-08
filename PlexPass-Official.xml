@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>PlexPass-Official</Name>
+  <Repository>plexinc/pms-docker:plexpass</Repository>
+  <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Overview>This is an UNRAID template for the official Plex docker.</Overview>
+  <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+  <WebUI>http://[IP]:[PORT:32400]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/GroxyPod/docker-icons/master/plex-pms-icon.png</Icon>
+  <ExtraParams/>
+  <Description>This is an UNRAID template for the official Plex docker.[br]
+  PLEX_CLAIM: Go to https://www.plex.tv/claim/ to get your claim code for the PLEX_CLAIM variable.</Description>
+    <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/</HostDir>
+      <ContainerDir>/Media</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Plex/Transcode</HostDir>
+      <ContainerDir>/transcode</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Plex</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Name>VERSION</Name>
+      <Value>latest</Value>
+    </Variable>
+    <Variable>
+      <Name>TZ</Name>
+	  <Value>America/Los_Angeles</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>PLEX_CLAIM</Name>
+	  <Value>claim-</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>PLEX_UID</Name>
+      <Value>99</Value>
+	  <Mode/>
+    </Variable>
+    <Variable>
+      <Name>PLEX_GID</Name>
+	  <Value>100</Value>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="Version" Target="VERSION" Default="latest" Mode="" Description="Plex Version: [latest, plexpass, or public]" Type="Variable" Display="always" Required="true" Mask="false">latest</Config>
+  <Config Name="Time Zone" Target="TZ" Default="America/New York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false">America/Los_Angeles</Config>
+  <Config Name="Plex Claim" Target="PLEX_CLAIM" Default="claim-" Mode="" Description="Container Variable: PLEX_CLAIM" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Media Directory" Target="/media" Default="/mnt/user/" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Transcode Directory" Target="/transcode" Default="/mnt/user/appdata/Plex/Transcode" Mode="rw" Description="Container Path: /transcode" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Plex/Transcode</Config>
+  <Config Name="Plex UID" Target="PLEX_UID" Default="99" Mode="" Description="Container Variable: PLEX_UID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="Plex GID" Target="PLEX_GID" Default="100" Mode="" Description="Container Variable: PLEX_GID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/Plex-Official</Config>
+</Container>
