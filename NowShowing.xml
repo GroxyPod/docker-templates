@@ -24,7 +24,7 @@
   </Changes>
   <WebUI>http://[IP]:[PORT:6878]</WebUI>
   <TemplateURL>https://github.com/ninthwalker/docker-templates</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/GroxyPod/docker-icons/master/nowshowing-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/GroxyPod/docker-icons/master/nowshowing.png</Icon>
   <ExtraParams/>
   <Branch>
     <Tag>dev</Tag>
