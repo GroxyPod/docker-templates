@@ -6,7 +6,7 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Support/>
-  <Overview>An Auto-Updating MineOS-Node Docker for unRAID</Overview>
+  <Overview>A MineOS-Node Docker for unRAID</Overview>
   <Category>MediaServer:Other</Category>
   <WebUI>https://[IP]:[PORT:8443]</WebUI>
   <TemplateURL/>
